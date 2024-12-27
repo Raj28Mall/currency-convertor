@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.money_note{
+    background-image:url(./pictures/money_note.png); 
+    background-repeat: no-repeat; 
+    background-position: center;
+}

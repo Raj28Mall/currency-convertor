@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <title>Currency Convertor</title>
+</head>
+
+<body class="flex flex-col justify-center items-center min-h-screen bg-[#003333]">
+    <div class="navbar text-white flex justify-between items-center w-full h-[8vh] bg-transparent fixed top-0 left-0 px-4">
+        <div class="logo text-lg font-medium"><a href="index.html">Currency Convertor</a></div>
+        <div class="links flex space-x-6">
+            <div class="relative">
+                <button id="aboutButton" class="bg-transparent hover:bg-gray-600 text-white py-2 px-4 rounded-lg">
+                    About
+                </button>
+                <div id="aboutDropdown" class="hidden absolute left-1/2 transform -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0 mt-2 w-80 bg-white text-black shadow-lg rounded-lg p-4 z-10 max-h-72 overflow-y-auto mx-3">
+                    <p>Hi! I'm Raj from Mumbai (I actually live right outside campus lol!). Had a lot of fun doing this project, learnt a lot, looking forward to more, or maybe joining DevCom fr🫣😉. Email toh hai hi, and if you need to WhatsApp: 9167601208. 
+                        (Website responsive banane mai jaan nikal gayi, been banging my head against the wall for the last couple of hours😊)</p>
+                </div>
+            </div>
+            <button id="extraButton" class="bg-transparent hover:bg-gray-600 text-white py-2 px-4 rounded-lg">
+                <a href="bonus.html" target="_blank">Bonus</a> 
+            </button>
+        </div>
+    </div>
+    <div class="flex flex-col justify-between rounded-xl h-3/4 md:h-[58vh] w-[80vw] md:w-[480px] bg-[#027c68] mt-[8vh]">
+        <div class="input flex flex-col justify-center items-center my-3 space-y-2 py-2 md:px-4">
+            <input type="number" id="inputQuantity" placeholder="Enter Quantity" class="bg-transparent w-[67.5vw] md:w-[400px] border-2 border-black rounded-xl px-3 py-2 mb-6">
+            <div class="flex flex-col justify-center items-center md:flex-row w-[80vw]">
+                <select name="inputCurrency" id="currencyDrop_1" class="w-3/4 bg-gray-300 md:self-start rounded-xl md:mt-2 p-2 md:w-[180px] md:h-auto"></select>
+                <button class="bg-transparent hover:bg-gray-300 rounded-full p-3 md:p-1 my-3 md:mx-3" id="swap">
+                    <img class="rotate-90 md:rotate-0 h-[4.5vh] w-auto md:h-[3vh]" src="./pictures/swap.png" alt="Swap currencies">
+                </button>
+                <select name="inputCurrency" id="currencyDrop_2" class="w-3/4 bg-gray-300 md:self-start rounded-xl p-2 md:mt-2 md:w-[180px] md:h-auto"></select>
+            </div>
+        </div>
+        <div class="w-fit mx-auto">
+            <button id="btn" class="bg-[#009933] hover:bg-[#b0e892] rounded-xl w-fit px-3 py-2 my-8 md:mt-0 md:mb-8">Calculate</button>
+        </div>
+        <div class="money_note flex justify-center bg-[length:200px_100px]" id="money_note">
+            <div class="bg-transparent rounded-xl px-3 py-2 my-8 text-center w-10/12 text-base font-medium bg-[#b0e892]" id="output"></div>
+        </div>
+        <div class="text-sm text-center text-black py-2 mt-auto" id="date"></div>
+    </div>
+
+    <div id="popup" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center"> 
+        <!--Im using classList.remove for hidden so both will not exist together, warning to be ignored-->
+        <div id="popupMessage" class="bg-white text-black p-6 rounded-md shadow-lg"></div>
+    </div>
+</body>
+
+</html>
